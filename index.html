@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carcolatore - Calcoli Finanziari per Investimenti in Azioni</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Carcolatore</h1>
+        </header>
+
+        <main>
+            <!-- SEZIONE 1: Calcolo Azioni Acquistabili -->
+            <section class="calculator-section">
+                <h3>1. Azioni</h3>
+                <div class="input-group">
+                    <label for="capital">Capitale (€)</label>
+                    <input type="number" id="capital" placeholder="5000" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="pricePerShare">Prezzo/azione (€)</label>
+                    <input type="number" id="pricePerShare" placeholder="50.50" step="0.01">
+                </div>
+                <div class="result-box">
+                    <p class="result-label">Azioni:</p>
+                    <p class="result-value" id="sharesAffordable">—</p>
+                </div>
+            </section>
+
+            <!-- SEZIONE 2: Calcolo Percentuale Guadagno Desiderato -->
+            <section class="calculator-section">
+                <h3>2. % Guadagno</h3>
+                <div class="input-group">
+                    <label for="investmentAmount2">Investito (€)</label>
+                    <input type="number" id="investmentAmount2" placeholder="10000" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="desiredGain">Guadagno (€)</label>
+                    <input type="number" id="desiredGain" placeholder="1500" step="0.01">
+                </div>
+                <div class="result-box">
+                    <p class="result-label">Percentuale:</p>
+                    <p class="result-value" id="desiredPercentage">—</p>
+                </div>
+            </section>
+
+            <!-- SEZIONE 3: Calcolo Guadagno da Percentuale -->
+            <section class="calculator-section">
+                <h3>3. Guadagno €</h3>
+                <div class="input-group">
+                    <label for="investmentAmount3">Investito (€)</label>
+                    <input type="number" id="investmentAmount3" placeholder="5000" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="growthPercentage">Percentuale (%)</label>
+                    <input type="number" id="growthPercentage" placeholder="15" step="0.01">
+                </div>
+                <div class="result-box">
+                    <p class="result-label">Guadagno:</p>
+                    <p class="result-value" id="gainFromPercentage">—</p>
+                </div>
+            </section>
+
+            <!-- SEZIONE 4: Calcolo Guadagno e Percentuale su Prezzo Target -->
+            <section class="calculator-section">
+                <h3>4. Prezzo Target</h3>
+                <div class="input-group">
+                    <label for="investmentAmount4">Investito (€)</label>
+                    <input type="number" id="investmentAmount4" placeholder="5000" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="sharesOwned">Azioni</label>
+                    <input type="number" id="sharesOwned" placeholder="100" step="1">
+                </div>
+                <div class="result-box" style="margin-top: 6px; margin-bottom: 8px;">
+                    <p class="result-label">Costo medio/azione:</p>
+                    <p class="result-value" id="averagePrice">—</p>
+                </div>
+                <div class="input-group">
+                    <label for="targetPrice">Target (€)</label>
+                    <input type="number" id="targetPrice" placeholder="60" step="0.01">
+                </div>
+                <div class="result-box">
+                    <p class="result-label">Guadagno / %:</p>
+                    <p class="result-value" id="totalGain">—</p>
+                    <p class="result-value" id="gainPercentage">—</p>
+                </div>
+            </section>
+
+            <!-- SEZIONE 5: Calcolo Tasse -->
+            <section class="calculator-section">
+                <h3>5. Tasse (26%)</h3>
+                <div class="input-group">
+                    <label for="grossProfit">Profitto (€)</label>
+                    <input type="number" id="grossProfit" placeholder="2000" step="0.01">
+                </div>
+                <div class="result-box">
+                    <p class="result-label">Tasse / Netto:</p>
+                    <p class="result-value" id="taxAmount">—</p>
+                    <p class="result-value" id="netProfit">—</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Carcolatore</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
