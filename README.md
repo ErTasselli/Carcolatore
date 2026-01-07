@@ -1,4 +1,4 @@
-# 📊 Carcolatore
+# 🧮 Carcolatore
 
 Uno strumento web semplice e intuitivo per eseguire calcoli finanziari rapidi sugli investimenti in azioni.
 
