@@ -24,6 +24,8 @@ Interfaccia pulita e moderna con tutte le sezioni di calcolo visibili in una sol
 
 ✅ **Calcolo Tasse** - Applica automaticamente il 26% di tasse sui profitti e mostra il netto
 
+✅ **Simulazione Prezzo Target** - Scopri a quale prezzo arrivare per raggiungere il tuo obiettivo di guadagno percentuale
+
 ✅ **Calcoli Automatici** - Nessun pulsante, i risultati si aggiornano mentre digiti
 
 ✅ **Zero Dipendenze Esterne** - Funziona completamente lato client, no API, no database
@@ -42,16 +44,22 @@ Interfaccia pulita e moderna con tutte le sezioni di calcolo visibili in una sol
 
 ### 3️⃣ Guadagno da Percentuale
 - Input: Somma investita, Percentuale di guadagno (%)
-- Output: Guadagno in euro
+- Output: Guadagno lordo e netto (dopo tasse 26%)
 - Formula: `(Investimento × Percentuale) / 100`
 
 ### 4️⃣ Guadagno su Prezzo Target
 - Input: Investimento, Numero azioni, Prezzo target per azione
 - Calcola automaticamente: Costo medio per azione
-- Output: Guadagno totale (€) e Percentuale di guadagno (%)
+- Output: Guadagno lordo, Percentuale di guadagno (%) e Guadagno netto (dopo tasse 26%)
 - Formula: `Guadagno = (Prezzo target × Azioni) - Investimento`
 
-### 5️⃣ Calcolo Tasse (26%)
+### 5️⃣ Simulazione Prezzo Target
+- Input: Investimento iniziale, Numero azioni, Prezzo attuale, Percentuale obiettivo (%)
+- Calcola automaticamente: Percentuale realizzata attualmente
+- Output: Prezzo necessario per raggiungere la percentuale obiettivo, Guadagno lordo e netto (con tasse 26%)
+- Formula: `Prezzo target = Investimento × (1 + % obiettivo) / Azioni`
+
+### 6️⃣ Calcolo Tasse (26%)
 - Input: Profitto lordo
 - Output: Importo tasse (26%) e Profitto netto
 - Formula: `Tasse = Profitto × 0.26` | `Netto = Profitto - Tasse`
@@ -151,15 +159,22 @@ npx http-server
 ### Esempio 3: Quanto guadagno con il 20%?
 - Investimento: €5.000
 - Percentuale: 20%
-- **Risultato**: €1.000 di guadagno
+- **Risultato**: Guadagno lordo €1.000, Guadagno netto €740 (dopo tasse 26%)
 
 ### Esempio 4: Guadagno al prezzo target?
 - Investimento: €5.000
 - Azioni: 100
 - Target: €60
-- **Risultato**: €1.000 di guadagno (+20%)
+- **Risultato**: Guadagno lordo €1.000 (+20%), Guadagno netto €740 (dopo tasse 26%)
 
-### Esempio 5: Quanto mi rimane dopo le tasse?
+### Esempio 5: A quale prezzo arrivo al mio obiettivo con tasse?
+- Investimento: €5.000
+- Azioni: 100
+- Prezzo attuale: €50 (guadagno 0%)
+- Obiettivo: +30%
+- **Risultato**: Prezzo target €65, Guadagno lordo €1.500, Guadagno netto €1.110 (dopo tasse 26%)
+
+### Esempio 6: Quanto mi rimane dopo le tasse?
 - Profitto lordo: €2.000
 - **Risultato**: Tasse €520, Netto €1.480
 
